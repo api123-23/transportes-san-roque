@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel - Transportes San Roque</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Transportes San Roque</h1>
+    <nav>
+      <a href="index.html">Cargar viaje</a>
+      <a href="panel.html" class="activo">Panel</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Panel del encargado</h2>
+
+    <div class="tarjetas">
+      <div class="tarjeta">
+        <span id="total-viajes">0</span>
+        <p>Viajes cargados</p>
+      </div>
+      <div class="tarjeta">
+        <span id="total-km">0</span>
+        <p>Km recorridos</p>
+      </div>
+      <div class="tarjeta alerta">
+        <span id="total-problemas">0</span>
+        <p>Camiones con problemas</p>
+      </div>
+    </div>
+
+    <div class="filtro">
+      <label>Filtrar por camión
+        <select id="filtro-camion">
+          <option value="">Todos</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="tabla-contenedor">
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Chofer</th>
+            <th>Camión</th>
+            <th>Recorrido</th>
+            <th>Km</th>
+            <th>Litros</th>
+            <th>Problema</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-viajes"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+  <script>iniciarPanel();</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carga de viaje - Transportes San Roque</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Transportes San Roque</h1>
+    <nav>
+      <a href="index.html" class="activo">Cargar viaje</a>
+      <a href="panel.html">Panel</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Cargar viaje</h2>
+    <p class="ayuda">Completá los datos al terminar cada viaje. Si no tenés señal se guarda igual en el celular.</p>
+
+    <form id="form-viaje">
+      <label>Chofer
+        <select id="chofer" required>
+          <option value="">Elegí tu nombre</option>
+          <option>Carlos Gómez</option>
+          <option>Martín Ruiz</option>
+          <option>Diego Sosa</option>
+        </select>
+      </label>
+
+      <label>Camión
+        <select id="camion" required>
+          <option value="">Elegí el camión</option>
+          <option>AB 123 CD - Scania</option>
+          <option>AC 456 EF - Mercedes</option>
+          <option>AD 789 GH - Iveco</option>
+        </select>
+      </label>
+
+      <label>Fecha
+        <input type="date" id="fecha" required>
+      </label>
+
+      <div class="fila">
+        <label>Origen
+          <input type="text" id="origen" placeholder="Ej: Malagueño" required>
+        </label>
+        <label>Destino
+          <input type="text" id="destino" placeholder="Ej: Rosario" required>
+        </label>
+      </div>
+
+      <div class="fila">
+        <label>Km inicio
+          <input type="number" id="kmInicio" min="0" required>
+        </label>
+        <label>Km final
+          <input type="number" id="kmFinal" min="0" required>
+        </label>
+      </div>
+
+      <label>Combustible cargado (litros)
+        <input type="number" id="litros" min="0" value="0">
+      </label>
+
+      <label class="check">
+        <input type="checkbox" id="hayProblema"> El camión tuvo algún problema
+      </label>
+
+      <label id="campo-problema" class="oculto">Contá qué pasó
+        <textarea id="problema" rows="3" placeholder="Ej: ruido en el freno trasero"></textarea>
+      </label>
+
+      <button type="submit">Guardar viaje</button>
+      <p id="mensaje"></p>
+    </form>
+  </main>
+
+  <script src="app.js"></script>
+  <script>iniciarFormulario();</script>
+</body>
+</html>
